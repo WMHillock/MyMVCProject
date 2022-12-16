@@ -9,7 +9,7 @@ public class Person {
     @Size(min = 2, max = 30, message = "Name should be between 2 and 30 characters")
     private String name;
 
-    @Max(value = 200, message = "I dont trust that you so old!")
+    @Max(value = 150, message = "I dont trust that you so old!")
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
 

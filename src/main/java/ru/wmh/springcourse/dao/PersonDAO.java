@@ -33,7 +33,7 @@ public class PersonDAO {
     }
 
     public void save(Person person)  {
-       jbdcTemplate.update("INSERT INTO Person VALUES(1, ?, ?, ?)",
+       jbdcTemplate.update("INSERT INTO Person(name, age, email) VALUES(?, ?, ?)",
                person.getName(),
                person.getAge(),
                person.getEmail());
@@ -43,7 +43,8 @@ public class PersonDAO {
         jbdcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?",
                 updatedPerson.getName(),
                 updatedPerson.getAge(),
-                updatedPerson.getEmail());
+                updatedPerson.getEmail(),
+                id);
     }
 
     public void delete(int id) {
